@@ -1,12 +1,12 @@
 ---
 title: 'Homepage'
-meta_title: 'Hugo Serif Theme'
-description: "Serif is a modern business theme for Hugo."
-intro_image: "images/illustrations/pointing.svg"
+meta_title: 'KubixCLoud'
+description: "KubixCLoud."
+intro_image: "images/illustrations/3357954.jpg"
 intro_image_absolute: true
 intro_image_hide_on_mobile: true
 ---
 
-# Serif - A Hugo Business Theme.
+# KubixCloud - Secure, fast & flexible.
 
-Serif contains content types for a typical business website. The theme is fully responsive, blazing fast and artfully illustrated.
+KubixCloud is the essence you need..
