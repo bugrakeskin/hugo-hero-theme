@@ -7,6 +7,6 @@ intro_image_absolute: true
 intro_image_hide_on_mobile: true
 ---
 
-# KubixCloud - @
+# KubixCloud
 
-Secure, fast & flexible..
+SECURE FAST & FLEXIBLE
