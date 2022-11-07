@@ -1,28 +1,14 @@
-ul.social {
-  height: inherit;
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-  justify-content: flex-start;
-  li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.social {
+  display: block;
+  img {
+    width: 20px;
+    height: 20px;
+  }
+  a {
+    padding: 10px;
     display: inline-block;
-    margin-right: 10px;
-    &:last-of-type {
-      margin: 0;
-    }
-    a {
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: auto;
-      display: block;
-      span {
-        font-size: 24px;
-      }
+    &:hover {
+      opacity: 0.8;
     }
   }
 }

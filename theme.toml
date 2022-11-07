@@ -1,14 +1,14 @@
-name = "Hero"
-license = "MIT"
-licenselink = "https://github.com/zerostaticthemes/hugo-hero-theme/blob/master/LICENSE"
-description = "Hero is a multipurpose theme with fullscreen hero images and fullwidth sections. It contains content types for a business or portfolio site."
+name = 'Hugo Serif'
+license = 'MIT'
+licenselink = 'https://github.com/zerostaticthemes/hugo-serif-theme/blob/master/LICENSE'
+description = 'Serif is an advanced multi page theme for Hugo. It contains multiple content types for a typical business website. The theme is fully responsive, blazing fast and artfully illustrated.'
 
-homepage = "https://github.com/zerostaticthemes/hugo-hero-theme"
-demosite = "https://hugo-hero.netlify.app/"
+homepage = 'https://github.com/zerostaticthemes/hugo-serif-theme'
+demosite = 'https://hugo-serif.netlify.app'
 
-tags = ["responsive","minimal","clean","company","portfolio","bootstrap","zerostatic"]
-features = ["services","work","fullwidth","hero images"]
+tags = ['responsive','personal','company','multipage','light','bootstrap','zerostatic']
+features = ['bootstrap','responsive','scss','google analytics','netlify']
 
 [author]
-  name = "Robert Austin"
-  homepage = "https://www.zerostatic.io"
+  name = 'Robert Austin'
+  homepage = 'https://www.zerostatic.io'

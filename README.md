@@ -1,60 +1,66 @@
-# Hugo Hero Theme
+# Hugo Serif Theme
 
-Hero is a multi-page business theme with fullscreen hero images and fullwidth sections.
+Serif is a modern business theme for Hugo. It contains multiple content types and pages. The theme is fully responsive, blazing fast and artfully illustrated.
 
-[Live Demo](https://hugo-hero.netlify.com/) |
-[Zerostatic Themes](https://www.zerostatic.io/theme/hugo-hero/)
+[Live Demo](https://hugo-serif.netlify.app/) |
+[Zerostatic Themes](https://www.zerostatic.io/)
 
-<a href="https://www.buymeacoffee.com/zerostatic" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-
-![Hugo Hero Theme screenshot](https://www.zerostatic.io/theme/hugo-hero/hugo-hero-screenshot.png)
+![Hugo Serif Theme screenshot](https://www.zerostatic.io/theme/hugo-serif/hugo-serif-screenshot.png)
 
 ## Features
 
 **Content Types**
+
 - Services (Markdown)
-- Work/Portfolio (Markdown)
+- Team (Markdown)
 - Features (Data)
-- About (Markdown, Single Page, Shortcodes)
-- Homepage (Markdown, Single Page, multiple .md files in one layout)
 
-**Content Management**
-- This theme's content is now all editable via markdown files.
-- Includes examples where multiple .md files are sourced in a single layout to create fullwidth sections that have different locations in the HTML.
-- The "Home" page uses multiple markdown files for the different homepage sections. It uses **headless bundles**.
-- The "About Us" page uses multiple markdown files for its different sections. It uses **leaf bundles** and **shortcodes**.
-- "Services" & "Work" use markdown files with layouts for list, single and summary views.
+**CSS**
 
-**Features**
-- Full-width responsive design
-- Full-width/full-height hero image partial
-
-**SCSS**
-- SCSS (Hugo Pipes)
-- Responsive design
-- Bootstrap 4 grid and media queries
-- The rest of the Bootstrap library is commented out by default but is ready to be @imported in the `style.scss`
+- SCSS (Hugo Pipelines)
+- Fully Responsive design
+- Bootstrap 4 grid and media queries only
+- Uncomment `@import 'bootstrap/bootstrap';` in `style.scss` to use the entire Bootstrap framework
+- Configure Google fonts from `config.toml`
+- Configure primary theme colors from `config.toml`
+- Examples of using Params from the `config.toml` as SCSS variables
 
 **Speed**
+
 - 100/100 Google Lighthouse speed score
-- Vanilla JS only
-- Minified CSS under 20KB
-- Minified JS under 20KB
+- Under 50KB without images or 80KB with images and illustrations ⚡
+- No jQuery, only a tiny bit of vanilla Javascript for the mobile menu.
 
 **SEO**
+
 - 100/100 Google Lighthouse SEO score
+- 100/100 Google Lighthouse accessibility score
 - Configure Google Analytics in `config.toml`
 - Configure Google Analytics using env variable `HUGO_GOOGLE_ANALYTICS_ID` compatible with Netlify.
 - Configure meta tags and OG meta tags for the homepage in `config.toml`
+- Override any meta tags on a per page basis
 - Semantic HTML document structure
 
 **Menu**
+
 - Responsive menu managed in `config.toml`
 - Animated hamburger menu on mobile
 
 **Content**
+
 - Robust example content included
 - Royalty free illustrations included
+
+**Code**
+
+- No hardcoded content in the layouts
+- Plenty of examples of using `range` and `where` to loop over various sections/content types
+- Examples of `range` by Param
+- Examples of using data content _(`data/contact.yaml` and `data/features.json`)_
+- Example of passing .Site . (context) and custom variables to partials - see `layouts/page/contact.html` - `{{ partial "call.html" (dict "site" .Site "context" . "show_button" "false") }}`
+- Examples of injecting javascript files on a per page basis (see `services/single.html`)
+- Set `body` classes from individual layouts - useful for CSS styling.
+- Example of using Hugo custom `layout` for the contact page
 
 ## Installation
 
@@ -64,7 +70,7 @@ To use this theme you will first need to have Hugo installed. Please follow the 
 
 ⚠️ **Note:** Check your Hugo version - **Hugo Extended** is required!
 
-This theme uses [Hugo Pipes](https://gohugo.io/hugo-pipes/scss-sass/) to compile SCSS and minify assets which means if you not using the Hugo extended version this theme will not work. To check your version of Hugo, run  `hugo version`. Make sure you see __/extended__ after the version number, for example _Hugo Static Site Generator v0.82.0/extended darwin/amd64 BuildDate: unknown_ You do not need to use version v0.82.0 specifically, it just needs to have the _/extended_ part.
+This theme uses [Hugo Pipes](https://gohugo.io/hugo-pipes/scss-sass/) to compile SCSS and minify assets which means if you not using the Hugo extended version this theme will not work. To check your version of Hugo, run `hugo version`. Make sure you see **/extended** after the version number, for example _Hugo Static Site Generator v0.51/extended darwin/amd64 BuildDate: unknown_ You do not need to use version v0.51 specifically, it just needs to have the _/extended_ part.
 
 **2. Create a new Hugo site**
 
@@ -76,29 +82,19 @@ hugo new site mynewsite
 
 **3. Install the theme**
 
-Download or git clone this theme into the sites themes folder `mynewsite/themes`. You should end up with the following folder structure `mynewsite/themes/hugo-hero-theme`
+Download or git clone this theme into the sites themes folder `mynewsite/themes`. You should end up with the following folder structure `mynewsite/themes/hugo-serif-theme`
 
 ```
 cd mynewsite
-git clone https://github.com/zerostaticthemes/hugo-hero-theme.git themes/hugo-hero-theme
+git clone https://github.com/zerostaticthemes/hugo-serif-theme.git themes/hugo-serif-theme
 ```
 
 **4. Copy the example content**
 
-Copy the entire contents of the `mynewsite/themes/hugo-hero-theme/exampleSite/` folder to root folder of your Hugo site, ie `mynewsite/`. To copy the files using terminal, make sure you are still in the projects root, ie the `mynewsite` folder.
+Copy the entire contents of the `mynewsite/themes/hugo-serif-theme/exampleSite/` folder to root folder of your Hugo site, ie `mynewsite/`. To copy the files using terminal, make sure you are still in the projects root, ie the `mynewsite` folder.
 
 ```
-cp -a themes/hugo-hero-theme/exampleSite/. .
-```
-
-**5. Update config.toml**
-
-After you copy the `config.toml` into the root folder of your Hugo site you will need to update the `baseURL`, `themesDir` and `theme` values in `mynewsite/config.toml`
-
-```
-baseURL = "/"
-themesDir = "themes"
-theme = "hugo-hero-theme"
+cp -a themes/hugo-serif-theme/exampleSite/. .
 ```
 
 **6. Run Hugo**
@@ -120,73 +116,115 @@ hugo server
 Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your browser.
 
 ## Deployment
+
 ### Netlify
 
 Use Netlify to deploy this theme. This theme contains a valid and tested `netlify.toml` - Feel free to use the 1-click deploy below.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zerostaticthemes/hugo-hero-theme)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zerostaticthemes/hugo-serif-theme)
 
 ## Configuring Theme
 
-### Homepage meta tags
+### Logo
 
-Often a homepage requires special meta tags such as a meta description or og meta data for twitter, facebook etc. You can configure these values in the `config.toml`
+You can edit the logo from the `config.toml`
 
-```
-// config.toml
-...
+```toml
+# config.toml
 
-  [params.homepage_meta_tags]
-    meta_description = "a description of your website."
-    meta_og_title = "My Theme"
-    meta_og_type = "website"
-    meta_og_url = "https://www.mywebsite.com"
-    meta_og_image = "https://www.mywebsite.com/images/tn.png"
-    meta_og_description = "a description of your website."
-    meta_twitter_card = "summary"
-    meta_twitter_site = "@mytwitterhandle"
-    meta_twitter_creator = "@mytwitterhandle"
-
+  [params.logo]
+    mobile = "images/logo/logo-mobile.svg"
+    mobile_height = "36px"
+    desktop = "images/logo/logo.svg"
+    desktop_height = "36px"
+    alt = "Serif - A Hugo Business Theme"
 ```
 
-### Set meta tags on a per layout basis
+### Fonts
 
-You can set meta tags on a per template basis using a block. For example, you might want to write a custom meta description for the `/services` page. You can insert any valid HTML meta data inside the `{{ define "meta_tags }}` block at the top of a template.
+This theme uses Google fonts. You can change the google font in the `config.toml` - These fonts are injected into the `style.scss` as SCSS variables.
 
+```toml
+# config.toml
+
+  [params.fonts]
+    # sets the google font link in layouts/partials/google-fonts.html
+    google_fonts = 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+Pro:wght@400;700&display=swap'
+    heading = "Playfair Display"
+    base = "Source Sans Pro"
 ```
-// layouts/services/list.html
-...
 
-{{ define "meta_tags" }}
-    <meta name="description" content="We offer a variety of services in the finance industry" />
-{{ end }}
+### Colors
 
-{{ define main }}
-...
+You can edit the themes main colors in the `config.toml`. These colors are injected into the `style.scss` as SCSS variables.
+
+```toml
+#config.toml
+
+  [params.colors]
+    primary = "#f24088"
+    black = "#2f2f41"
+    white = "#ffffff"
+    white_offset = "#f6f7ff"
+    grey = "#5C5A5A"
 ```
+
+### Intro Image
+
+List pages such as the homepage, services and team can have a Intro image.
+
+```yml
+# content/_index.md
+---
+intro_image: "https://source.unsplash.com/wOGhHamMqLc"
+intro_image_absolute: false
+intro_image_hide_on_mobile: true
+---
+```
+
+While this themes default content uses illustrations, its easy to change the image to a photo and it will still look great.
+
+the front-matter field `intro_image_absolute: true` let's illustrations "break out" (in CSS terms, it uses `position: absolute`) of the grid and is an intended stylistic effect. When using photos or normal images it's recommended to set this field to false and the photo will align with the grid. See `content/team/_index.md` for an example.
 
 ### Google Analytics
 
-Add your google analytics ID to the `config.toml`
+Put your Google Analytics ID in the `google_analytics_id` field in the `config.toml` - Also supports Google Tag Manager. When your site is running locally using `hugo server` the GA tag is not injected. This prevents polluting your real data.
 
-```
-// config.toml
+```toml
+# config.toml
+
 [params]
-  google_analytics_id="UA-132398315-1"
+  google_analytics_id = "UA-XXX-1"
+  google_tag_manager_id = ""
 ```
 
-### Menu
+You can also set the Google Analytics ID using a [Netlify environment variable](https://docs.netlify.com/configure-builds/environment-variables/) `HUGO_GOOGLE_ANALYTICS_ID`
 
-You can edit and add main menu links in the `config.toml` under `[[menu.main]]`
+### Meta tags
 
-## Extras
+A pages `<title>` is generated from the front-matter `meta_title` else it will use the `title` property. This allows you to have a different heading on the page to what is shown in the SEO title. See `content/_index.md` for an example.
+
+The meta description field is generated from the front-matter `description`
+
+OG meta data for Facebook and Twitter is also generated on a per page basis. The `image` field is used for the og:image for Twitter and Facebook.
+
+You can configure og meta data global settings in the config.
+
+```toml
+# config.toml
+
+  [params.seo]
+    meta_twitter_site = "@zerostaticio"
+    meta_twitter_creator = "@zerostaticio"
+    meta_og_image = "https://www.zerostatic.io/theme/hugo-serif/hugo-serif-screenshot.png"
+```
 
 ### License
 
-- Don't create ports or new versions of this theme without asking me
+- Don't create ports of this theme without asking me
 - You can't re-distribute or re-sell this theme as your own template
 
-### Credits 
+### Credits
 
 - Beautiful royalty free Illustrations by Icons8 - https://icons8.com/illustrations/style--pixeltrue
 - Stock images by Unsplash - https://unsplash.com/
@@ -194,12 +232,12 @@ You can edit and add main menu links in the `config.toml` under `[[menu.main]]`
 
 ### Other Hugo Themes by Zerostatic
 
-- [Hugo Whisper](https://github.com/zerostaticthemes/hugo-whisper-theme)
-- [Hugo Serif](https://github.com/zerostaticthemes/hugo-serif-theme)
-- [Hugo Winston](https://github.com/zerostaticthemes/hugo-winston-theme)
-- [Hugo Advance](https://www.zerostatic.io/theme/hugo-advance/)
-- [Hugo Paradigm](https://www.zerostatic.io/theme/hugo-paradigm/)
+- [Hugo Hero](https://github.com/zerostaticthemes/hugo-serif-theme) - Open Source: business theme
+- [Hugo Whisper](https://github.com/zerostaticthemes/hugo-whisper-theme) - Open Source: documentation theme
+- [Hugo Winston](https://github.com/zerostaticthemes/hugo-winston-theme) Open Source:- blog theme
+- [Hugo Advance](https://www.zerostatic.io/theme/hugo-advance/) Premium: advanced multi page business and marketing theme
+- [Hugo Paradigm](https://www.zerostatic.io/theme/hugo-paradigm/) Premium: landing page / site builder theme
 
+🇦🇺 **Made in Australia** by Robert Austin - leave a star mate!
 
-🇦🇺 **Made in Australia** by Robert Austin - Support our work - **Star this repo** ⭐
-
+<a href="https://www.buymeacoffee.com/zerostatic" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>

@@ -1,13 +1,6 @@
-$color-main: $primary;
-$color-active: #ffffff;
-$color-link: #ffffff;
-
-$button-height: 27px;
-$button-width: 35px;
-
 .main-menu-mobile {
   position: fixed;
-  background: $color-main;
+  background: $primary;
   top: 0;
   left: 0;
   width: 100%;
@@ -44,9 +37,12 @@ $button-width: 35px;
         animation-delay: 0.6s;
       }
     }
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
   }
   ul {
-    font-size: 2rem;
+    font-size: 30px;
     font-family: $font-family-heading;
     text-align: center;
     list-style: none;
@@ -57,27 +53,15 @@ $button-width: 35px;
       display: block;
       position: relative;
       opacity: 0;
+      padding: 10px;
       a {
         display: block;
         position: relative;
-        color: $color-link;
+        color: #ffffff;
         text-decoration: none;
         overflow: hidden;
-        &:hover::after,
-        &:focus::after,
-        &:active::after {
-          width: 100%;
-        }
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          width: 0%;
-          transform: translateX(-50%);
-          height: 3px;
-          background: $color-link;
-          transition: 0.35s;
+        &:hover {
+          opacity: 0.8;
         }
       }
     }
