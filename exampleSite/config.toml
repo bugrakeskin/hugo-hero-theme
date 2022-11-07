@@ -21,9 +21,9 @@ title = "Hugo Serif Theme"
   [params.logo]
     mobile = "images/logo/KUBIX-CLOUD.png"
     mobile_height = "26px"
-    desktop = "images/logo/logo.svg"
+    desktop = "images/logo/KUBIX-CLOUD.png"
     desktop_height = "26px"
-    alt = "Serif - A Hugo Business Theme"
+    alt = "KubixCloud - Web Page"
 
   [params.fonts]
     # sets the google font link in layouts/partials/google-fonts.html
