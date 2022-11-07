@@ -20,9 +20,9 @@ title = "Hugo Serif Theme"
 
   [params.logo]
     mobile = "images/logo/KUBIX-CLOUD.png"
-    mobile_height = "26px"
+    mobile_height = "36px"
     desktop = "images/logo/KUBIX-CLOUD.png"
-    desktop_height = "26px"
+    desktop_height = "36px"
     alt = "KubixCloud - Web Page"
 
   [params.fonts]
